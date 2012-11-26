@@ -1,0 +1,17 @@
+<launch>
+    <arg name="robot_name" default="pioneer"/>    
+    
+    <include file="$(find p3dx)/launch/p3dx-p2os-lms100.launch">
+		<arg name="robot_name" value="$(arg robot_name)"/>
+    </include>
+
+    <node name="gmapping" pkg="gmapping" type="slam_gmapping">
+        <param name="base_frame" value="$(arg robot_name)/base_link"/>
+	<param name="odom_frame" value="$(arg robot_name)/odom"/>
+	<param name="xmin" value="-10.0"/>
+	<param name="xmax" value="10.0"/>
+	<param name="ymin" value="-10.0"/>
+	<param name="ymax" value="10.0"/>
+        <remap from="scan" to="$(arg robot_name)/scan"/>
+    </node>    
+</launch>

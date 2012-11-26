@@ -1,0 +1,16 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b p3dx_config 
+
+<!-- 
+Provide an overview of your package.
+-->
+
+A package containing configuration and launch files for running the ROS Navigation stack on a Pioneer P3-DX robot.
+
+-->
+
+
+*/

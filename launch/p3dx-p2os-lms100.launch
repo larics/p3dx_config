@@ -1,0 +1,13 @@
+<launch>
+    <arg name="robot_name" default="pioneer"/>    
+    
+    <node name="p2os" pkg="p2os_driver" type="p2os" ns="$(arg robot_name)">
+        <param name="tf_prefix" value="$(arg robot_name)"/>
+	    <param name="pulse" value="1.0"/>
+    </node>
+    
+    <include file="$(find LMS1xx)/launch/p3dx_lms100.launch">
+		<arg name="robot_name" value="$(arg robot_name)"/>
+    </include>
+    
+</launch>

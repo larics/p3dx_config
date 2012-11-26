@@ -1,0 +1,23 @@
+Node: /pioneer/move_base
+Time: 1353851045.074908436
+Severity: Error
+Location: /home/larics/ros/fuerte/navigation/costmap_2d/src/costmap_2d_ros.cpp:Costmap2DROS::getRobotPose:1316
+Extrapolation Error looking up robot pose: Unable to lookup transform, cache is empty, when looking up transform from frame [/pioneer/base_link] to frame [/pioneer/map]
+
+Node: /pioneer/move_base
+Time: 1353851183.174391884
+Severity: Warn
+Location: /home/larics/ros/fuerte/navigation/costmap_2d/src/costmap_2d_ros.cpp:Costmap2DROS::movementCB:408
+Could not get robot pose, cancelling reconfiguration
+
+Node: /pioneer/move_base
+Time: 1353851183.589668599
+Severity: Warn
+Location: /home/larics/ros/fuerte/navigation/costmap_2d/src/costmap_2d_ros.cpp:Costmap2DROS::getRobotPose:1322
+Costmap2DROS transform timeout. Current time: 1353851183.5896, global_pose stamp: 1353851182.0584, tolerance: 0.5000
+
+Node: /pioneer/move_base
+Time: 1353851426.384672929
+Severity: Warn
+Location: /home/larics/ros/fuerte/navigation/move_base/src/move_base.cpp:MoveBase::makePlan:507
+Unable to get starting pose of robot, unable to create global plan
