@@ -2,12 +2,12 @@
     <arg name="robot_name" default="pioneer"/>    
     <arg name="map_file" default="larics-c-XI-16.yaml"/>
 
-    <include file="$(find p3dx)/launch/p3dx-p2os-lms100.launch">
+    <include file="$(find p3dx_config)/launch/p3dx-p2os-lms100.launch">
 		<arg name="robot_name" value="$(arg robot_name)"/>
     </include>
 
     <group ns="$(arg robot_name)">
-        <node pkg="map_server" type="map_server" name="map_server" args="$(find p3dx)/maps/$(arg map_file)">
+        <node pkg="map_server" type="map_server" name="map_server" args="$(find p3dx_config)/maps/$(arg map_file)">
             <param name="frame_id" value="/$(arg robot_name)/map"/>
         </node>        
         <node name="amcl" pkg="amcl" type="amcl">
