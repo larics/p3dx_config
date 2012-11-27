@@ -1,0 +1,14 @@
+<launch>
+    <arg name="robot_name" default="pioneer"/>    
+    <arg name="map_file" default="larics-c-XI-16.yaml"/>
+
+    <include file="$(find p3dx_config)/launch/amcl.launch">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="map_file" value="$(arg map_file)"/>
+    </include>
+
+    <include file="$(find p3dx_config)/launch/navigation.launch">
+        <arg name="robot_name" value="$(arg robt_name)"/>
+    </include>
+    
+</launch>
