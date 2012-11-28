@@ -1,7 +1,7 @@
 <launch>
     <arg name="robot_name" default="pioneer"/>    
     
-    <include file="$(find p3dx)/launch/p3dx-p2os-lms100.launch">
+    <include file="$(find p3dx_config)/launch/p3dx-p2os-lms100.launch">
 		<arg name="robot_name" value="$(arg robot_name)"/>
     </include>
 
