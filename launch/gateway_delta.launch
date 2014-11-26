@@ -1,0 +1,19 @@
+<!-- 
+  Works with skilled_lgv_utils/hub.launch. 
+-->
+<launch>
+
+  <arg name="hub_uri" default="mrcina-ubuntu"/>
+  <arg name="hub_port" default="6380"/>
+  <arg name="hub_name" default="Lgv Hub"/>
+  <arg name="gateway_name" default="gateway_delta"/>
+
+  <!--node ns="zeroconf" pkg="zeroconf_avahi" type="zeroconf" name="zeroconf"/-->
+  <node pkg="rocon_gateway" type="gateway.py" name="gateway" output="screen">
+    <rosparam command="load" file="$(find p3dx_config)/yaml/gateway_delta.yaml" />
+    <rosparam command="load" file="$(find p3dx_config)/yaml/gateway_blacklist.yaml"/>
+    <!--param name="hub_whitelist" value="[$(arg hub_name)]" /-->
+    <param name="hub_uri" value="http://$(arg hub_uri):$(arg hub_port)" />
+    <param name="name" value="$(arg gateway_name)" />
+  </node>
+</launch>
