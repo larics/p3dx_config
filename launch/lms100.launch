@@ -1,0 +1,9 @@
+<launch>
+  <arg name="robot_name" default="$(env ROBOT_NAME)"/>
+
+  <!-- Launch the LMS1xx driver. -->
+  <include file="$(find lms1xx)/LMS1xx.launch" ns="$(arg robot_name)">
+    <arg name="host" value="192.168.0.2"/>
+  </include>
+    
+</launch>
