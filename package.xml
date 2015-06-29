@@ -1,0 +1,26 @@
+<package>
+  <name>p3dx_config</name>
+  <version>0.2.0</version>
+  <description>
+    This package provides configuration and launch files for basic
+    control of the p3dx mobile robots: manual control with joystick
+    and autonomous navigation using the navigation stack.
+  </description>
+  <maintainer email="damjan.miklic@fer.hr">Damjan Miklić</maintainer>
+  <url type="website">http://larics.rasip.fer.hr</url>
+  <author>Damjan Miklić</author>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend></build_depend>
+  <run_depend>joy</run_depend>
+  <run_depend>teleop_twist_joy</run_depend>
+  <run_depend>lms1xx</run_depend>
+  <!--run_depend>navigation</run_depnd-->
+  <test_depend></test_depend>
+  <export></export>
+
+</package>
+
+
