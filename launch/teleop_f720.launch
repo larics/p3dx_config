@@ -10,6 +10,14 @@
     <!-- run a joy node to get input from the joystick -->
     <node pkg="joy" type="joy_node" name="f710">
     </node>
+
+    <!-- Run the teleop node to translate joy messages to twist messages -->
+    <!-- This setup is adapted for the Logitech f710 -->
+    <node pkg="teleop_twist_joy" type="teleop_node" name="teleop">
+      <param name="enable_button" value="6"/>
+      <param name="axis_linear" value="1"/>
+      <param name="axis_angular" value="2"/>
+    </node>
   </group>
 
 </launch>
