@@ -1,0 +1,8 @@
+<launch>
+
+  <!-- run a joy node to get input from the joystick -->
+  <node pkg="joy" type="joy_node" name="f710">
+
+  </node>
+
+<launch>
