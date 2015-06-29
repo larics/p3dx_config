@@ -1,0 +1,16 @@
+<launch>
+
+  <arg name="robot_name" default="$(env ROBOT_NAME)"/>
+
+  <!-- Run all nodes in the robot_name namespace -->
+  <!-- This is a pain for single robot systems -->
+  <!-- But saves a lot of headaches in multi-robot setups -->
+
+  <group ns="$(arg robot_name)">
+    <!-- Run the p2os_driver node -->
+    <node pkg="p2os_driver" type="p2os_driver" name="driver">
+      <param name="pulse" value="1.0"/>
+    </node>
+  </group>
+
+</launch>
