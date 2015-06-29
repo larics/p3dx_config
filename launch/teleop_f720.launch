@@ -1,8 +1,15 @@
 <launch>
 
-  <!-- run a joy node to get input from the joystick -->
-  <node pkg="joy" type="joy_node" name="f710">
+  <arg name="robot_name" default="$(env ROBOT_NAME)"/>
 
-  </node>
+  <!-- Run all nodes in the robot_name namespace -->
+  <!-- This is a pain for single robot systems -->
+  <!-- But saves a lot of headaches in multi-robot setups -->
+
+  <group ns="$(arg robot_name)">
+    <!-- run a joy node to get input from the joystick -->
+    <node pkg="joy" type="joy_node" name="f710">
+    </node>
+  </group>
 
 </launch>
