@@ -1,0 +1,7 @@
+<launch>
+
+  <include file="$(find p3dx_config)/p2os-lms100-teleop.launch"/>
+
+  <include file="$(find p3dx_config)/mocap.launch"/>
+
+</launch>
