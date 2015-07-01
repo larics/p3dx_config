@@ -2,7 +2,7 @@
 
   <arg name="robot_name" default="$(env ROBOT_NAME)"/>
   <arg name="track_file" default="$(find p3dx_config)/track/$(arg robot_name).track"/>
-  <node name="mocap" pkg="across_optitrack" type="MOCAPnode"
+  <node name="mocap" pkg="across_optitrack" type="mocap_tfpub"
         args="-trackables $(arg track_file)"/>
 
 </launch>
