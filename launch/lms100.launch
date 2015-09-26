@@ -5,7 +5,7 @@
 
     <!-- Launch the LMS1xx driver. -->
     <include file="$(find lms1xx)/launch/LMS1xx.launch">
-      <arg name="host" value="192.168.0.2"/>
+      <arg name="host" value="192.168.0.1"/>
     </include>
     
     <!-- Run the transform that defines the position of the laser -->
