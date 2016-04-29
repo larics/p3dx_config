@@ -1,9 +1,9 @@
 <launch>
-    <arg name="robot_name" default="pioneer"/>    
-    <arg name="map_file" default="larics-c-XI-16.yaml"/>
+    <arg name="robot_name" default="$(env ROBOT_NAME)"/>    
+    <arg name="map_file" default="map.yaml"/>
 
-    <include file="$(find p3dx_config)/launch/p3dx-p2os-lms100.launch">
-		<arg name="robot_name" value="$(arg robot_name)"/>
+    <include file="$(find p3dx_config)/launch/p2os-lms100.launch">
+		<!--arg name="robot_name" value="$(arg robot_name)"/-->
     </include>
 
     <group ns="$(arg robot_name)">
