@@ -1,0 +1,27 @@
+<launch>
+
+    <arg name="robot_name" default="$(env ROBOT_NAME)"/>	
+    <arg name="map_file" default="$(find p3dx_config)/maps/map.yaml"/>
+	
+    <!-- Vehicle names and priorities -->
+    <rosparam param="vehicleNames">['alpha']</rosparam>
+    <rosparam param="vehiclePriorities">[1]</rosparam>
+	
+    <!-- Pure pursuit parameters -->
+    <rosparam param="lookAheadDistance">0.25</rosparam>
+    <rosparam param="linVelocity">0.15</rosparam>
+    <rosparam param="maxAngVelocity">0.4</rosparam>
+	
+    <rosparam param="posTolerance">0.3</rosparam>
+	
+    <arg name="mat_file" default="$(find agv_control)/params/params_p3dx.mat"/>
+    <arg name="mat_file_coarse" default="$(find agv_control)/params/params_p3dx.mat"/>
+    <arg name="mat_file_fine" default="$(find agv_control)/params/params_p3dx.mat"/>
+    <!--arg name="sec_file" default="$(find agv_control)/sectors/sectors.txt"/-->
+	
+    <group ns="$(arg robot_name)">
+        <node pkg="agv_control" name="pathPlanner" type="pathPlanner" args="$(arg mat_file)" />
+        <node pkg="agv_control" name="agvController" type="agvController" args= "$(arg mat_file)" />
+    </group>
+    
+</launch>
