@@ -6,7 +6,7 @@ ROS package containing configuration and launch files for basic contorl of the p
 
 	ssh user@ip
 	ip: 161.53.68.186 foxtrot larics connection
-	   10.129.65.193 foxtrot FERWlan connection
+	    10.129.65.193 foxtrot FERWlan connection
 
 2.) start p2os-lms100-teleop.launch
 
