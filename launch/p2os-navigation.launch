@@ -1,6 +1,6 @@
 <launch>
     <arg name="robot_name" default="pioneer"/>    
-    <arg name="map_file" default="larics-c-XI-16.yaml"/>
+    <arg name="map_file" default="map.yaml"/>
 
     <!-- Launch AMCL localization -->
     <include file="$(find p3dx_config)/launch/p2os-amcl.launch">
