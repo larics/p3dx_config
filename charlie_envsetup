@@ -1,0 +1,7 @@
+#charlie wifi
+export ROS_HOSTNAME=charlie
+export ROS_MASTER_URI=http://charlie:11311
+export ROBOT_NAME=charlie
+export LASER_IP=192.168.0.1
+
+bash

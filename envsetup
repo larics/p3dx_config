@@ -2,7 +2,14 @@
 export ROS_IP=10.129.126.23
 export ROS_HOSTNAME=10.129.126.23
 export ROS_MASTER_URI=http://10.129.126.23:11311
-export ROBOT_NAME=pioneer
+export ROBOT_NAME=charlie
+export LASER_IP=192.168.0.1
+
+#charlie wire
+export ROS_IP=161.53.68.183
+export ROS_HOSTNAME=161.53.68.183
+export ROS_MASTER_URI=http://161.53.68.183:11311
+export ROBOT_NAME=charlie
 export LASER_IP=192.168.0.1
 
 bash
