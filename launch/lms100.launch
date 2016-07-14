@@ -1,11 +1,12 @@
 <launch>
   <arg name="robot_name" default="$(env ROBOT_NAME)"/>
+  <arg name="laser_ip" default="$(env LASER_IP)"/>
 
   <group ns="$(arg robot_name)">
 
     <!-- Launch the LMS1xx driver. -->
     <node pkg="lms1xx" name="lms1xx" type="LMS1xx_node" output="screen" >
-      <param name="host" value="192.168.0.1"/>
+      <param name="host" value="$(arg laser_ip)"/>
       <param name="frame_id" value="$(arg robot_name)/laser"/>
     </node>
     
