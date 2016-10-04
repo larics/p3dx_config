@@ -1,0 +1,5 @@
+# wifi
+export ROS_HOSTNAME=$HOSTNAME.local
+export ROBOT_NAME=$HOSTNAME
+export LASER_IP=192.168.0.1
+

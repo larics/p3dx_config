@@ -1,0 +1,21 @@
+<launch>
+
+  <arg name="robot_name" default="$(env ROBOT_NAME)"/>
+
+  <!-- Run all nodes in the robot_name namespace -->
+  <!-- This is a pain for single robot systems -->
+  <!-- But saves a lot of headaches in multi-robot setups -->
+
+  <group ns="$(arg robot_name)" >
+    <!-- Run the p2os_driver node -->
+    <node pkg="rosaria" type="RosAria" name="driver">
+	<!--<param name="base_link_frame_id" value="$(arg robot_name)/base_link"/>-->
+	<!--<param name="odom_frame_id" value="$(arg robot_name)/odom"/>-->
+
+	<!--<param name="pulse" value="1.0"/>-->
+	<param name="port" value="/dev/ttyS0" />
+	<remap from="driver/cmd_vel" to="cmd_vel" />
+    </node>
+  </group>
+
+</launch>
