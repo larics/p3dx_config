@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- The driver & teleoperation -->
+  <include file="$(find p3dx_config)/launch/aria-teleop.launch"/>
+
+  <!-- The laser -->
+  <include file="$(find p3dx_config)/launch/lms100.launch"/>
+    
+</launch>
