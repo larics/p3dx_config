@@ -11,7 +11,7 @@
     </node>
     
     <!-- Run the transform that defines the position of the laser -->
-    <node pkg="tf" type="static_transform_publisher" name="laser_tf" args="0.14 0 0.3 0 0 0 $(arg robot_name)/base_link $(arg robot_name)/laser 50"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="laser_tf" args="0.14 0 0.3 0 0 0 $(arg robot_name)/base_link $(arg robot_name)/laser"/>
   </group>
 
 </launch>
