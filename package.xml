@@ -20,8 +20,8 @@
   <run_depend>p2os_driver</run_depend>
   <run_depend>p2os_teleop</run_depend>
   <run_depend>p2os_msgs</run_depend>
-
-  <!--run_depend>navigation</run_depnd-->
+  <run_depend>rosaria</run_depend>
+  <run_depend>navigation</run_depend>
   <!--test_depend></test_depend-->
   <export></export>
 
