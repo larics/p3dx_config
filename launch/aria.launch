@@ -9,9 +9,9 @@
   <group ns="$(arg robot_name)" >
     <!-- Run the p2os_driver node -->
     <node pkg="rosaria" type="RosAria" name="driver">
-    <param name="tf_prefix" value="$(arg robot_name)" />
-	<!--<param name="base_link_frame_id" value="$(arg robot_name)/base_link"/>-->
-	<!--<param name="odom_frame_id" value="$(arg robot_name)/odom"/>-->
+	<param name="base_link_frame" value="$(arg robot_name)/base_link"/>
+	<param name="odom_frame" value="$(arg robot_name)/odom"/>
+	<remap from="driver/pose" to="pose" />
 
 	<!--<param name="pulse" value="1.0"/>-->
 	<param name="port" value="/dev/ttyS0" />
