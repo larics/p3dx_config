@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- The driver -->
+  <include file="$(find p3dx_config)/launch/aria.launch"/>
+
+  <!-- The laser -->
+  <include file="$(find p3dx_config)/launch/lms100.launch"/>
+    
+</launch>
