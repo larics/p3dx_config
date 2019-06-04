@@ -1,0 +1,18 @@
+<launch>
+  <arg name="robot_name" default="$(env ROBOT_NAME)" />
+  <arg name="config_suffix" default=""/>
+  <arg name="map" default="map"/>
+
+  <group ns="$(arg robot_name)">  
+  <node name="cartographer_node" pkg="cartographer_ros"
+      type="cartographer_node" args="
+          -configuration_directory $(find p3dx_config)/config
+          -configuration_basename cartographer_localization$(arg config_suffix).lua
+          -load_state_filename '$(find p3dx_config)/maps/$(arg map).pbstream'
+          -load_frozen_state true">
+    <remap from="odom" to="driver/pose"/>
+    
+  </node>
+  </group>
+
+</launch>

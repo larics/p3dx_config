@@ -1,0 +1,23 @@
+<launch>
+  <arg name="robot_name" default="$(env ROBOT_NAME)" />
+  <arg name="config_suffix" default=""/>
+  <arg name="bag"/>
+
+  <param name="use_sim_time" value="true" />
+  <remap from="/$(arg robot_name)/tf" to="/tf"/>
+  <remap from="/$(arg robot_name)/clock" to="/clock"/>
+  <group ns="$(arg robot_name)">
+  <node name="cartographer_offline_node" pkg="cartographer_ros"
+        type="cartographer_offline_node"
+        args="-bag_filenames $(arg bag)
+              -configuration_directory $(find p3dx_config)/config
+              -configuration_basenames cartographer$(arg config_suffix).lua">
+    <remap from="odom" to="driver/pose" />
+    <remap from="scan" to="scan"/>
+  </node>
+  </group>
+
+  <include file="$(find p3dx_config)/launch/rviz.launch">
+    <arg name="config" value="$(arg robot_name)-cartographer"/>
+  </include>
+</launch>
