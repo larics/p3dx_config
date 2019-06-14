@@ -1,0 +1,22 @@
+<launch>
+    <arg name="robot_name" default="$(env ROBOT_NAME)"/>    
+    <arg name="map_file" default="map.yaml"/>
+
+    <include file="$(find p3dx_config)/launch/p2os-lms100.launch">
+		<!--arg name="robot_name" value="$(arg robot_name)"/-->
+    </include>
+
+    <group ns="$(arg robot_name)">
+        <node pkg="map_server" type="map_server" name="map_server" args="$(find p3dx_config)/maps/$(arg map_file)">
+            <param name="frame_id" value="/$(arg robot_name)/map"/>
+        </node>        
+        <node name="amcl" pkg="amcl" type="amcl">
+            <param name="odom_frame_id" value="/$(arg robot_name)/odom"/>
+            <param name="base_frame_id" value="/$(arg robot_name)/base_link"/>
+            <param name="global_frame_id" value="/$(arg robot_name)/map"/>
+            <!--param name="use_map_topic" value="true"/-->
+            <remap from="odom" to="/$(arg robot_name)/odom"/>
+            <remap from="scan" to="/$(arg robot_name)/scan"/>
+        </node>
+    </group>    
+</launch>

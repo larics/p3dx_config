@@ -1,0 +1,24 @@
+<launch>
+
+  <arg name="robot_name" value="$(env ROBOT_NAME)"/>
+
+  <group ns="$(arg robot_name)">
+
+    <include file="$(find p3dx_config)/launch/lms100.launch" >
+      <arg name="laser_name" value="lms1xx_front" />
+      <arg name="laser_ip" value="$(env LASER_IP)"/>
+      <arg name="tf_pose" value="0.14 0 0.3 0 0 0" />
+      <remap from="scan" to="scan_front"/>
+    </include>
+
+  
+    <include file="$(find p3dx_config)/launch/lms100.launch">
+      <arg name="laser_name" value="lms1xx_front"/>
+      <arg name="laser_ip" value="169.254.149.55" />
+      <arg name="tf_pose" value="-0.26 0 0.3 0 0 0" />
+      <remap from="scan" to="scan_front"/>
+    </include>
+  </group>
+    
+    
+</launch>

@@ -1,17 +1,22 @@
 <launch>
   <arg name="robot_name" default="$(env ROBOT_NAME)"/>
   <arg name="laser_ip" default="$(env LASER_IP)"/>
+  <arg name="laser_name" default="lms1xx"/>
+  <arg name="tf_pose" default="0.14 0 0.3 0 0 0"/>
+
 
   <group ns="$(arg robot_name)">
 
     <!-- Launch the LMS1xx driver. -->
-    <node pkg="lms1xx" name="lms1xx" type="LMS1xx_node" output="screen" >
+    <node pkg="lms1xx" name="$(arg laser_name)" type="LMS1xx_node" output="screen" >
       <param name="host" value="$(arg laser_ip)"/>
-      <param name="frame_id" value="$(arg robot_name)/laser"/>
+      <param name="frame_id" value="$(arg robot_name)/$(arg laser_name)"/>
     </node>
     
     <!-- Run the transform that defines the position of the laser -->
-    <node pkg="tf2_ros" type="static_transform_publisher" name="laser_tf" args="0.14 0 0.3 0 0 0 $(arg robot_name)/base_link $(arg robot_name)/laser"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="$(arg laser_name)_tf" args="$(arg tf_pose) $(arg robot_name)/base_link $(arg robot_name)/$(arg laser_name)"/>
   </group>
+
+
 
 </launch>

@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find p3dx_config)/launch/p2os-lms100-teleop.launch"/>
+    <include file="$(find p3dx_config)/launch/gmapping.launch"/>
+</launch>
