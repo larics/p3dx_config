@@ -1,5 +1,5 @@
 <launch>
-    <arg name="robot_name" default="pioneer"/>    
+    <arg name="robot_name" default="$(env ROBOT_NAME)"/>    
 
     <!-- Launch navigation -->
     <node pkg="move_base" type="move_base" name="move_base" ns="$(arg robot_name)">        

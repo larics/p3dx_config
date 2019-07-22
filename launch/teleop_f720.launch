@@ -8,8 +8,7 @@
 
   <group ns="$(arg robot_name)">
     <!-- run a joy node to get input from the joystick -->
-    <node pkg="joy" type="joy_node" name="f710">
-    </node>
+    <node pkg="joy" type="joy_node" name="f710"/>
 
     <!-- Run the teleop node to translate joy messages to twist messages -->
     <!-- This setup is adapted for the Logitech f710 -->

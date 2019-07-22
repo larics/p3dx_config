@@ -1,0 +1,6 @@
+<launch>
+  <arg name="robot_name" value="$(env ROBOT_NAME)"/>
+  <arg name="bag_name" default=""/>
+  <arg name="saved_bag_path" default="$(find p3dx_config)/bags"/>
+  <node pkg="rosbag" type="record" args="-o $(arg saved_bag_path)/$(arg bag_name)" name="record" output="screen"/>
+</launch>

@@ -1,0 +1,23 @@
+<launch>
+
+  <include file="$(find p3dx_config)/launch/p2os-teleop.launch" />
+  <!-- The laser -->
+  <arg name="robot_name" value="$(env ROBOT_NAME)"/>"
+  <include file="$(find p3dx_config)/launch/lms100.launch" >
+    <arg name="lms_name" value="lms1xx_front" />
+    <arg name="tf_name" value="laser_tf_front"/>
+    <arg name="tf_args" value="0.14 0 0.3 0 0 0 $(arg robot_name)/base_link $(arg robot_name)/laser" />
+  </include>
+  
+
+  <include file="$(find p3dx_config)/launch/lms100.launch" >
+    <arg name="lms_name" value="lms1xx_back" />
+    <arg name="tf_name" value="laser_tf_back" />
+    <arg name="laser_ip" value="169.254.149.55" />
+    <arg name="tf_args" value="-0.26 0 0.3 0 0 0 $(arg robot_name)/base_link $(arg robot_name)/laser" />
+  </include>
+  <remap from="laser_tf" to="laser_back_tf" />
+  <include file="$(find p3dx_config)/launch/obstacle-detector.launch" />
+  <include file="$(find p3dx_config)/launch/amcl.launch" />
+</launch> 
+

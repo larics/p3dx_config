@@ -15,7 +15,7 @@
       <param name="pulse" value="1.0"/>
     </node>
     <node pkg="rostopic" type="rostopic" name="motor_enable" output="screen"
-          args="pub /$(arg robot_name)/cmd_motor_state p2os_msgs/MotorState 1"/>
+          args="pub cmd_motor_state p2os_msgs/MotorState 1"/>
   </group>
 
 </launch>

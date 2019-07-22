@@ -1,5 +1,5 @@
 <launch>
-    <arg name="robot_name" default="pioneer"/>    
+    <arg name="robot_name" default="$(env ROBOT_NAME)"/>
     <arg name="map_file" default="map.yaml"/>
 
     <!-- Launch AMCL localization -->

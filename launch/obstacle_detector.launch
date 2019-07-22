@@ -1,0 +1,8 @@
+<launch>
+  <arg name="robot_name" default="$(env ROBOT_NAME)"/> 
+   
+  <include file="$(find p3dx_config)/launch/p2os-teleop.launch" >
+  <include file="$(find p3dx_config)/launch/dual-laser.launch" >
+  <include file="$(find obstacle_detector)/launch/obstacle_detector.launch"/>
+</launch>
+
